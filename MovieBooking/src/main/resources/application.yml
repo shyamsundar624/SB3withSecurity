@@ -1,0 +1,19 @@
+jwt:
+  secret: aBHjrujfbsj@$#kmndjd12kkfnrkrnrkms45DNKNNC
+  expiration: 3600000
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: MovieBooking
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root1234
+    url: jdbc:mysql://localhost:3306/boot
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
