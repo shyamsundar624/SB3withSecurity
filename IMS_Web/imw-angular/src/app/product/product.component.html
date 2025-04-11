@@ -1,0 +1,45 @@
+<div class="product-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+  <!-- Product Header -->
+  <div class="product-header">
+    <h1>Product</h1>
+    <button class="add-product-btn" (click)="navigateToAddProduct()">
+      App Product
+    </button>
+  </div>
+
+  <!-- Product List -->
+  <div class="product-list" *ngIf="products.length > 0">
+    <div class="product-item" *ngFor="let product of products">
+      <img
+        [src]="product.imageUrl"
+        [alt]="product.name"
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="name">{{ product.name }}</h3>
+        <p class="sku">sku:{{ product.sku }}</p>
+        <p class="price">Price:{{ product.price }}</p>
+        <p class="stockQuantity">stockQuantity:{{ product.stockQuantity }}</p>
+      </div>
+
+      <!-- Product Actions -->
+      <div class="product-actions">
+        <button (click)="navigateToEditProduct(product.id)" class="edt-btn">
+          Edit
+        </button>
+        <button (click)="handleProductDelete(product.id)" class="delete-btn">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination Component in Used -->
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPage]="totalPage"
+    (pageChange)="onPageChange($event)"
+  >
+  </app-pagination>
+</div>

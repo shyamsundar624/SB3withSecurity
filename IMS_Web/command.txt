@@ -1,0 +1,47 @@
+npm install -g @angular/cli
+
+npm config set fund=false --location=global  (if asking for fund)
+
+ng new ims_web
+
+npm i crypto-js
+
+npm install @swimlane/ngx-charts --save    (chart library)
+
+ng g s service/api
+
+ng g s service/guard
+
+ng g c dashboard
+
+ng g c profile
+
+ng g c product
+
+ng g c category
+
+ng g c supplier
+
+ng g c pagination
+
+ng g c login
+
+ng g c register
+
+ng g c sell
+
+ng g c purchase
+
+ng g c transaction
+
+ng g c addEditProduct
+
+ng g c addEditSupplier
+
+ng g c transactionDetails
+
+npm i --save-dev @types/crypto-js
+
+npm I
+
+npm start

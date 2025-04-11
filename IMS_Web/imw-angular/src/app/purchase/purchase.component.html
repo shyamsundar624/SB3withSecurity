@@ -1,0 +1,49 @@
+<div class="purchase-form-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+  <h1>Receive Inventory</h1>
+  <!-- Product Purchase Inventory Receiving Page -->
+
+  <form (ngSubmit)="handleSubmit()">
+    <div class="form-group">
+      <label>Select Product</label>
+      <select
+        name="productId"
+        class="form-control"
+        [(ngModel)]="productId"
+        id=""
+      >
+        <option value="">Select a Product</option>
+        <option *ngFor="let product of products" [value]="product.id">
+          {{ product.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Select Supplier</label>
+      <select
+        name="supplierId"
+        class="form-control"
+        [(ngModel)]="supplierId"
+        id=""
+      >
+        <option value="">Select a Supplier</option>
+        <option *ngFor="let supplier of suppliers" [value]="supplier.id">
+          {{ supplier.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" [(ngModel)]="description" class="form-control" name="description"/>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="number" [(ngModel)]="quantity" class="form-control" name="quantity"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Purchase Product</button>
+  </form>
+</div>
